@@ -6,7 +6,7 @@ import { PlayerTypes } from '~/store/ducks/player';
 import { load } from '~/store/sagas/podcasts';
 
 import {
-  init, setPodcast, play, pause, prev, next,
+  init, setPodcast, play, pause, prev, next, reset,
 } from '~/store/sagas/player';
 
 export default function* rootSaga() {
@@ -18,5 +18,6 @@ export default function* rootSaga() {
     takeLatest(PlayerTypes.PAUSE, pause),
     takeLatest(PlayerTypes.PREV, prev),
     takeLatest(PlayerTypes.NEXT, next),
+    takeLatest(PlayerTypes.RESET, reset),
   ]);
 }

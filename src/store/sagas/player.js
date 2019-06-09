@@ -96,3 +96,8 @@ export function* next() {
     yield put(PlayerActions.play());
   }
 }
+
+export function* reset() {
+  yield call(TrackPlayer.stop);
+  yield call(TrackPlayer.reset);
+}
